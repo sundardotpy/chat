@@ -8,21 +8,37 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --dark:#0d1b2e; --dark-mid:#142235; --dark-card:#1a2d45; --dark-border:#1f3454;
-      --green:#4ecb71; --green-dim:#2a9e4f; --green-light:#edfbf1;
-      --white:#ffffff; --off-white:#f5f7fa; --text:#1c2f42; --text-mid:#3d5168; --text-light:#6a82a0; --line:#dde5ef;
-      --amber:#f5a623; --amber-light:#fffbf0; --amber-border:#fce8b2;
-      --red:#e5524a; --red-light:#fff5f4; --red-border:#f9c8c6;
-      --blue:#3b82f6; --blue-light:#eff5ff; --blue-border:#c7daf8;
-      --purple:#8b5cf6; --purple-light:#f4f0ff;
+      --dark: #111111; 
+      --dark-mid: #1c1c1c; 
+      --dark-card: #242424; 
+      --dark-border: #333333;
+      --green: #05a54b; 
+      --green-dim: #04873e; 
+      --green-light: #e6f6ed;
+      --white: #ffffff; 
+      --text: #111111; 
+      --text-mid: #4a4a4a; 
+      --text-light: #757575; 
+      --line: #e0e0e0;
+      --amber: #d97706; 
+      --amber-light: #fffbeb; 
+      --amber-border: #fde68a;
+      --red: #dc2626; 
+      --red-light: #fef2f2; 
+      --red-border: #fca5a5;
+      --blue: #2563eb; 
+      --blue-light: #eff6ff; 
+      --blue-border: #bfdbfe;
+      --purple: #7c3aed; 
+      --purple-light: #f5f3ff;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Sora', sans-serif; background: var(--off-white); color: var(--text); font-size: 14px; line-height: 1.75; }
+    body { font-family: 'Sora', sans-serif; background: var(--white); color: var(--text); font-size: 14px; line-height: 1.75; }
 
     /* HERO */
     header { background: var(--dark); color: var(--white); position: relative; overflow: hidden; }
-    .hero-glow { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(78,203,113,0.15) 0%,transparent 70%); top:-150px; right:-100px; pointer-events:none; }
-    .hero-glow2 { position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle,rgba(78,203,113,0.07) 0%,transparent 70%); bottom:-80px; left:40px; pointer-events:none; }
+    .hero-glow { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(5,165,75,0.15) 0%,transparent 70%); top:-150px; right:-100px; pointer-events:none; }
+    .hero-glow2 { position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle,rgba(5,165,75,0.07) 0%,transparent 70%); bottom:-80px; left:40px; pointer-events:none; }
     .hero-inner { position:relative; z-index:1; padding:52px 44px 44px; }
     .brand-row { display:flex; align-items:center; gap:10px; margin-bottom:28px; }
     .brand-dot { width:10px; height:10px; background:var(--green); border-radius:50%; }
@@ -31,46 +47,62 @@
     .brand-sub { font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:0.5px; }
     header h1 { font-size:30px; font-weight:700; line-height:1.2; color:var(--white); margin-bottom:10px; max-width:580px; }
     header h1 span { color:var(--green); }
-    header p { font-size:13.5px; color:rgba(255,255,255,0.55); max-width:520px; font-weight:300; }
+    header p { font-size:13.5px; color:rgba(255,255,255,0.6); max-width:520px; font-weight:300; }
     .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; align-items:center; }
     .chip { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:5px 14px; font-size:11.5px; color:rgba(255,255,255,0.65); font-weight:500; }
-    .chip.green { background:rgba(78,203,113,0.12); border-color:rgba(78,203,113,0.25); color:var(--green); }
-    .chip.robylon { background:rgba(59,130,246,0.15); border-color:rgba(59,130,246,0.35); color:#7eb8ff; }
-    .btn-sop { display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--dark); font-family:'Sora',sans-serif; font-size:12.5px; font-weight:700; padding:9px 18px; border-radius:24px; text-decoration:none; border:none; cursor:pointer; transition:background 0.2s,transform 0.15s,box-shadow 0.2s; box-shadow:0 4px 16px rgba(78,203,113,0.25); white-space:nowrap; }
-    .btn-sop:hover { background:#62d984; transform:translateY(-1px); box-shadow:0 6px 20px rgba(78,203,113,0.35); }
+    .chip.green { background:rgba(5,165,75,0.12); border-color:rgba(5,165,75,0.25); color:var(--green); }
+    .btn-sop { display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--white); font-family:'Sora',sans-serif; font-size:12.5px; font-weight:700; padding:9px 18px; border-radius:24px; text-decoration:none; border:none; cursor:pointer; transition:background 0.2s,transform 0.15s,box-shadow 0.2s; box-shadow:0 4px 16px rgba(5,165,75,0.25); white-space:nowrap; }
+    .btn-sop:hover { background:#04873e; transform:translateY(-1px); box-shadow:0 6px 20px rgba(5,165,75,0.35); }
     .btn-divider { width:1px; height:20px; background:rgba(255,255,255,0.12); }
 
     /* NAV */
     .nav-bar { background:var(--dark-mid); border-bottom:1px solid var(--dark-border); padding:0 44px; overflow-x:auto; white-space:nowrap; position:sticky; top:0; z-index:100; }
     .nav-bar::-webkit-scrollbar { height:3px; }
     .nav-bar::-webkit-scrollbar-thumb { background:var(--green-dim); border-radius:3px; }
-    .nav-bar a { display:inline-block; padding:13px 16px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.5); text-decoration:none; border-bottom:2px solid transparent; transition:all 0.2s; }
+    .nav-bar a { display:inline-block; padding:13px 16px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); text-decoration:none; border-bottom:2px solid transparent; transition:all 0.2s; }
     .nav-bar a:hover { color:var(--green); border-bottom-color:var(--green); }
 
     /* MAIN */
     main { max-width:900px; margin:0 auto; padding:36px 24px 80px; }
 
     /* STEP BLOCK */
-    .step-block { background:var(--white); border-radius:14px; border:1px solid var(--line); margin-bottom:24px; overflow:hidden; box-shadow:0 2px 12px rgba(13,27,46,0.06); }
+    .step-block { background:var(--white); border-radius:14px; border:1px solid var(--line); margin-bottom:24px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
     .step-hdr { background:var(--dark); padding:18px 26px; display:flex; align-items:center; gap:14px; }
-    .step-badge { background:var(--green); color:var(--dark); font-size:12px; font-weight:700; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .step-badge.icon { font-size:14px; background:rgba(78,203,113,0.15); color:var(--green); }
+    .step-badge { background:var(--green); color:var(--white); font-size:12px; font-weight:700; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .step-badge.icon { background:rgba(5,165,75,0.15); color:var(--green); display: flex; align-items: center; justify-content: center; padding: 6px; }
+    .step-badge.icon svg { width: 16px; height: 16px; fill: currentColor; }
     .step-hdr h2 { font-size:16px; font-weight:600; color:var(--white); }
     .step-hdr .step-sub { font-size:12px; color:rgba(255,255,255,0.4); margin-left:auto; white-space:nowrap; }
     .step-body { padding:24px 26px; }
-    .s-intro { font-size:13px; color:var(--text-light); margin-bottom:18px; line-height:1.6; }
+    .s-intro { font-size:13px; color:var(--text-mid); margin-bottom:18px; line-height:1.6; }
     .divider { height:1px; background:var(--line); margin:20px 0; }
+
+    /* MOCK UI COMPONENTS */
+    .mock-ui-container { background: #ffffff; border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin: 12px 0; font-family: sans-serif; }
+    .mock-dropdown-box { border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; background: #fafafa; font-size: 13px; max-width: 240px; }
+    .mock-dropdown-list { margin-top: 4px; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; max-width: 240px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .mock-dropdown-item { padding: 8px 12px; font-size: 13px; display: flex; align-items: center; gap: 8px; background: #ffffff; }
+    .mock-dropdown-item.active { background: var(--green-light); font-weight: 600; }
+    
+    .mock-sidebar-panel { background: #fafafa; border: 1px solid var(--line); border-radius: 8px; padding: 14px; font-size: 13px; }
+    .mock-sidebar-header { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; letter-spacing: 0.5px; }
+    .mock-sidebar-field { margin-bottom: 12px; }
+    .mock-sidebar-field label { display: block; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+    .mock-toggle-group { display: flex; gap: 8px; margin-top: 6px; }
+    .mock-toggle-btn { flex: 1; text-align: center; padding: 6px; border: 1px solid var(--line); border-radius: 6px; font-size: 12px; font-weight: 600; background: #fff; cursor: pointer; }
+    .mock-toggle-btn.yes-selected { background: var(--green-light); border-color: var(--green); color: var(--green-dim); }
+    .mock-action-btn { background: var(--dark); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 4px; }
 
     /* STATUS SYSTEM */
     .status-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
     @media(max-width:580px){.status-grid{grid-template-columns:1fr;}}
     .status-group-title { font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--text-light); margin-bottom:10px; }
     .status-items { display:flex; flex-direction:column; gap:8px; }
-    .status-pill { display:flex; align-items:flex-start; gap:11px; background:var(--off-white); border:1px solid var(--line); border-radius:9px; padding:11px 14px; }
+    .status-pill { display:flex; align-items:flex-start; gap:11px; background:#f9f9f9; border:1px solid var(--line); border-radius:9px; padding:11px 14px; }
     .status-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:4px; }
     .status-pill-body strong { display:block; font-size:13px; font-weight:600; color:var(--text); margin-bottom:2px; }
     .status-pill-body span { font-size:12.5px; color:var(--text-mid); line-height:1.5; }
-    .dot-open{background:var(--green);} .dot-waiting{background:var(--amber);} .dot-closed{background:#94a3b8;}
+    .dot-open{background:var(--green);} .dot-waiting{background:var(--amber);} .dot-closed{background:#757575;}
     .dot-available{background:var(--green);} .dot-unavailable{background:var(--red);}
 
     /* AVAILABILITY BAND */
@@ -87,9 +119,9 @@
     /* STATUS BADGE TAGS */
     .status-tag { display:inline-flex; align-items:center; gap:5px; border-radius:20px; padding:3px 10px; font-size:11.5px; font-weight:600; }
     .status-tag .sd { width:7px; height:7px; border-radius:50%; }
-    .status-tag.waiting  { background:var(--amber-light); color:#c07d10; } .status-tag.waiting .sd  { background:var(--amber); }
-    .status-tag.open     { background:var(--green-light); color:var(--green-dim); } .status-tag.open .sd { background:var(--green); }
-    .status-tag.closed   { background:#f1f5f9; color:#475569; } .status-tag.closed .sd { background:#94a3b8; }
+    .status-tag.waiting  { background:var(--amber-light); color:var(--amber); border: 1px solid var(--amber-border); } .status-tag.waiting .sd  { background:var(--amber); }
+    .status-tag.open     { background:var(--green-light); color:var(--green-dim); border: 1px solid #b6e8c6; } .status-tag.open .sd { background:var(--green); }
+    .status-tag.closed   { background:#f1f5f9; color:var(--text-mid); border: 1px solid var(--line); } .status-tag.closed .sd { background:#757575; }
 
     /* RESPONSE TIMES */
     .time-banner { background:var(--dark); border-radius:14px; padding:24px 28px; margin-bottom:32px; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; border:1px solid var(--dark-border); }
@@ -105,49 +137,54 @@
     .s-card.green { background:var(--green-light); border-color:#b6e8c6; }
     .s-card.amber { background:var(--amber-light); border-color:var(--amber-border); }
     .s-tag { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:7px; }
-    .s-tag.green { color:var(--green-dim); } .s-tag.amber { color:#c07d10; }
+    .s-tag.green { color:var(--green-dim); } .s-tag.amber { color:var(--amber); }
     .s-card h3 { font-size:13.5px; font-weight:600; margin-bottom:12px; color:var(--text); }
 
     /* ACTION LIST */
     .a-list { list-style:none; }
     .a-list li { display:flex; gap:11px; align-items:flex-start; padding:9px 0; border-bottom:1px solid var(--line); font-size:13.5px; line-height:1.6; }
     .a-list li:last-child { border-bottom:none; }
-    .a-dot { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; flex-shrink:0; margin-top:1px; }
+    .a-dot { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; flex-shrink:0; margin-top:1px; }
     .a-dot.g{background:var(--green-light);color:var(--green-dim);} .a-dot.b{background:var(--blue-light);color:var(--blue);}
-    .a-dot.a{background:var(--amber-light);color:#c07d10;} .a-dot.r{background:var(--red-light);color:var(--red);}
+    .a-dot.a{background:var(--amber-light);color:var(--amber);} .a-dot.r{background:var(--red-light);color:var(--red);}
     .a-dot.n{background:#f0f2f5;color:var(--text-mid);} .a-dot.p{background:var(--purple-light);color:var(--purple);}
 
     /* SAMPLES */
     .sample { background:var(--dark); border-radius:8px; padding:12px 16px; margin-top:10px; }
     .sample-lbl { font-size:9.5px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:6px; }
-    .sample p { font-size:13px; color:rgba(255,255,255,0.75); line-height:1.65; font-style:italic; font-weight:300; }
+    .sample p { font-size:13px; color:rgba(255,255,255,0.85); line-height:1.65; font-style:italic; font-weight:300; }
 
     /* FLOW */
     .flow { display:flex; flex-direction:column; }
     .flow-step { display:flex; gap:16px; align-items:flex-start; position:relative; }
     .flow-step:not(:last-child)::after { content:''; position:absolute; left:14px; top:32px; width:2px; height:calc(100% - 8px); background:var(--line); }
-    .f-dot { width:28px; height:28px; border-radius:50%; border:2px solid var(--line); background:var(--white); display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0; z-index:1; position:relative; margin-top:2px; }
-    .f-dot.green{border-color:var(--green);background:var(--green-light);} .f-dot.amber{border-color:var(--amber);background:var(--amber-light);} .f-dot.red{border-color:var(--red);background:var(--red-light);}
+    .f-dot { width:28px; height:28px; border-radius:50%; border:2px solid var(--line); background:var(--white); display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0; z-index:1; position:relative; margin-top:2px; color: var(--text-mid); }
+    .f-dot.green{border-color:var(--green);background:var(--green-light); color: var(--green-dim);} 
+    .f-dot.amber{border-color:var(--amber);background:var(--amber-light); color: var(--amber);} 
+    .f-dot.red{border-color:var(--red);background:var(--red-light); color: var(--red);}
     .flow-content { flex:1; padding-bottom:22px; }
     .flow-content strong { display:block; font-size:13.5px; font-weight:600; color:var(--text); margin-bottom:3px; }
     .flow-content span { font-size:13px; color:var(--text-mid); }
-    .timer { display:inline-block; background:var(--amber-light); border:1px solid var(--amber-border); border-radius:20px; padding:2px 9px; font-size:11px; font-weight:700; color:#c07d10; margin-left:6px; font-family:'DM Mono',monospace; }
+    .timer { display:inline-block; background:var(--amber-light); border:1px solid var(--amber-border); border-radius:20px; padding:2px 9px; font-size:11px; font-weight:700; color:var(--amber); margin-left:6px; font-family:'DM Mono',monospace; }
 
     /* TAGS */
     .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
-    .tag { border-radius:20px; padding:3px 11px; font-size:11.5px; font-weight:600; }
-    .tag.green{background:var(--green-light);color:var(--green-dim);} .tag.red{background:var(--red-light);color:var(--red);}
-    .tag.amber{background:var(--amber-light);color:#c07d10;} .tag.blue{background:var(--blue-light);color:var(--blue);}
-    .tag.purple{background:var(--purple-light);color:var(--purple);} .tag.dark{background:#e8ecf1;color:var(--text-mid);}
+    .tag { border-radius:20px; padding:3px 11px; font-size:11.5px; font-weight:600; border: 1px solid transparent; }
+    .tag.green{background:var(--green-light);color:var(--green-dim); border-color: #b6e8c6;} 
+    .tag.red{background:var(--red-light);color:var(--red); border-color: var(--red-border);}
+    .tag.amber{background:var(--amber-light);color:var(--amber); border-color: var(--amber-border);} 
+    .tag.blue{background:var(--blue-light);color:var(--blue); border-color: var(--blue-border);}
+    .tag.purple{background:var(--purple-light);color:var(--purple); border-color: var(--purple-border);} 
+    .tag.dark{background:#e8ecf1;color:var(--text-mid); border-color: var(--line);}
 
     /* INFO/WARN BOXES */
-    .info-box,.warn-box,.danger-box,.tip-box { border-radius:8px; padding:12px 16px; font-size:13px; margin-top:14px; line-height:1.6; }
-    .info-box  { background:var(--blue-light);  border-left:3px solid var(--blue);  color:#1e3a6b; }
-    .warn-box  { background:var(--amber-light); border-left:3px solid var(--amber); color:#7a4a0a; }
-    .danger-box{ background:var(--red-light);   border-left:3px solid var(--red);   color:#7a1a1a; }
-    .tip-box   { background:var(--green-light); border-left:3px solid var(--green); color:#145a30; }
+    .info-box,.warn-box,.danger-box,.tip-box { border-radius:8px; padding:12px 16px; font-size:13px; margin-top:14px; line-height:1.6; border: 1px solid transparent; }
+    .info-box  { background:var(--blue-light);  border-left:4px solid var(--blue);  color:#1e3a6b; border-color: var(--blue-border); }
+    .warn-box  { background:var(--amber-light); border-left:4px solid var(--amber); color:#7a4a0a; border-color: var(--amber-border); }
+    .danger-box{ background:var(--red-light);   border-left:4px solid var(--red);   color:#7a1a1a; border-color: var(--red-border); }
+    .tip-box   { background:var(--green-light); border-left:4px solid var(--green); color:#145a30; border-color: #b6e8c6; }
     .box-lbl { font-size:9.5px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:5px; }
-    .info-box .box-lbl{color:var(--blue);} .warn-box .box-lbl{color:#c07d10;} .danger-box .box-lbl{color:var(--red);} .tip-box .box-lbl{color:var(--green-dim);}
+    .info-box .box-lbl{color:var(--blue);} .warn-box .box-lbl{color:var(--amber);} .danger-box .box-lbl{color:var(--red);} .tip-box .box-lbl{color:var(--green-dim);}
 
     /* DO/DONT */
     .do-dont { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:4px; }
@@ -167,7 +204,7 @@
     /* DISCLAIMERS */
     .disc-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
     @media(max-width:580px){.disc-grid{grid-template-columns:1fr;}}
-    .disc-card { background:var(--off-white); border:1px solid var(--line); border-radius:10px; padding:16px; }
+    .disc-card { background:#f9f9f9; border:1px solid var(--line); border-radius:10px; padding:16px; }
     .disc-type { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--purple); margin-bottom:7px; }
     .disc-card h4 { font-size:13.5px; font-weight:600; color:var(--text); margin-bottom:6px; }
     .disc-card p  { font-size:12.5px; color:var(--text-mid); line-height:1.6; }
@@ -175,49 +212,39 @@
     /* CHECKLIST */
     .checklist { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:4px; }
     @media(max-width:560px){.checklist{grid-template-columns:1fr;}}
-    .check-item { display:flex; gap:10px; align-items:flex-start; background:var(--off-white); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:13px; color:var(--text); line-height:1.5; }
-    .check-icon { width:18px; height:18px; border:2px solid var(--green-dim); border-radius:4px; flex-shrink:0; background:var(--green-light); margin-top:1px; }
+    .check-item { display:flex; gap:10px; align-items:flex-start; background:#f9f9f9; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:13px; color:var(--text); line-height:1.5; }
+    .check-icon { width:18px; height:18px; border:2px solid var(--green-dim); border-radius:4px; flex-shrink:0; background:var(--green-light); margin-top:1px; display: flex; align-items: center; justify-content: center; }
+    .check-icon::after { content: '✓'; color: var(--green-dim); font-size: 11px; font-weight: bold; }
 
     /* SHIFT */
     .shift-steps { display:flex; flex-direction:column; gap:10px; }
-    .shift-step { display:flex; gap:12px; align-items:flex-start; background:var(--off-white); border:1px solid var(--line); border-radius:8px; padding:11px 14px; font-size:13.5px; }
+    .shift-step { display:flex; gap:12px; align-items:flex-start; background:#f9f9f9; border:1px solid var(--line); border-radius:8px; padding:11px 14px; font-size:13.5px; }
     .shift-num { background:var(--dark); color:var(--green); font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'DM Mono',monospace; }
 
     /* REF TABLE */
-    .ref-table { width:100%; border-collapse:collapse; font-size:13px; margin-top:6px; }
-    .ref-table th { background:var(--dark); color:var(--white); padding:10px 14px; text-align:left; font-weight:500; font-size:11.5px; letter-spacing:0.3px; }
-    .ref-table th:first-child{border-radius:8px 0 0 0;} .ref-table th:last-child{border-radius:0 8px 0 0;}
-    .ref-table td { padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.55; }
+    .ref-table { width:100%; border-collapse:collapse; font-size:13px; margin-top:6px; border: 1px solid var(--line); }
+    .ref-table th { background:var(--dark); color:var(--white); padding:12px 14px; text-align:left; font-weight:500; font-size:11.5px; letter-spacing:0.3px; }
+    .ref-table td { padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.55; }
     .ref-table tr:last-child td { border:none; }
-    .ref-table tr:nth-child(even) td { background:var(--off-white); }
+    .ref-table tr:nth-child(even) td { background:#f9f9f9; }
 
     /* CALLOUT */
     .callout { background:var(--dark); border-radius:12px; padding:20px 22px; margin-bottom:28px; display:flex; gap:14px; align-items:flex-start; border:1px solid var(--dark-border); }
-    .callout-icon { font-size:22px; flex-shrink:0; }
+    .callout-icon { fill: var(--green); width: 24px; height: 24px; flex-shrink:0; margin-top: 2px; }
     .callout-body h3 { font-size:14px; font-weight:600; color:var(--green); margin-bottom:4px; }
-    .callout-body p  { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.65; }
-
-
-    /* UI REFERENCE IMAGES */
-    .ui-ref-row { display:flex; flex-wrap:wrap; gap:16px; margin:14px 0; }
-    .ui-ref-card { background:var(--off-white); border:1px solid var(--line); border-radius:10px; padding:14px 16px; max-width:480px; }
-    .ui-ref-label { font-size:9.5px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--blue); margin-bottom:8px; }
-    .ui-ref-img { display:block; max-width:100%; border-radius:6px; border:1px solid var(--line); margin-bottom:8px; }
-    .ui-ref-caption { font-size:12px; color:var(--text-mid); line-height:1.55; }
-
+    .callout-body p  { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.65; }
 
     /* UI REFERENCE IMAGES */
     .ui-ref-row { display:flex; flex-wrap:wrap; gap:16px; margin:14px 0; }
-    .ui-ref-card { background:var(--off-white); border:1px solid var(--line); border-radius:10px; padding:14px 16px; max-width:480px; }
+    .ui-ref-card { background:#f9f9f9; border:1px solid var(--line); border-radius:10px; padding:14px 16px; max-width:480px; width: 100%; }
     .ui-ref-label { font-size:9.5px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--blue); margin-bottom:8px; }
-    .ui-ref-img { display:block; max-width:100%; border-radius:6px; border:1px solid var(--line); margin-bottom:8px; }
-    .ui-ref-caption { font-size:12px; color:var(--text-mid); line-height:1.55; }
+    .ui-ref-caption { font-size:12px; color:var(--text-mid); line-height:1.55; margin-top: 8px; }
 
     /* PLATFORM BADGE */
-    .platform-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700; color:#7eb8ff; letter-spacing:0.5px; margin-bottom:16px; }
+    .platform-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(37,99,235,0.08); border:1px solid rgba(37,99,235,0.2); border-radius:20px; padding:4px 12px; font-size:11px; font-weight:700; color:var(--blue); letter-spacing:0.5px; margin-bottom:16px; }
 
     /* FOOTER */
-    footer { background:var(--dark); color:rgba(255,255,255,0.35); text-align:center; padding:24px; font-size:12px; }
+    footer { background:var(--dark); color:rgba(255,255,255,0.4); text-align:center; padding:24px; font-size:12px; border-top: 1px solid var(--dark-border); }
     footer span { color:var(--green); font-weight:600; }
     footer a { color:var(--green); text-decoration:none; font-weight:600; }
     footer a:hover { text-decoration:underline; }
@@ -240,53 +267,67 @@
     <div class="hero-actions">
       <span class="chip">🔒 Internal Use Only</span>
       <div class="btn-divider"></div>
-      <a class="btn-sop" href="https://cxsop.github.io/call/" target="_blank">📞 View Call SOP</a>
+      <a class="btn-sop" href="https://cxsop.github.io/call/" target="_blank">
+        <svg style="width:14px; height:14px; fill:currentColor; margin-right:4px; vertical-align:middle;" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+        View Call SOP
+      </a>
     </div>
   </div>
 </header>
 
 <nav class="nav-bar">
-  <a href="#availability">🟢 Availability</a>
-  <a href="#status">🔖 Chat Status</a>
-  <a href="#timings">⏱ Response Times</a>
-  <a href="#opening">📨 Chat Opening</a>
-  <a href="#silence">🔇 Silence Handling</a>
-  <a href="#active">💬 Active Handling</a>
-  <a href="#call">📞 Call Requests</a>
-  <a href="#junk">🗑 Junk Chats</a>
-  <a href="#closing">✅ Closing Chats</a>
-  <a href="#resolved">🔵 Resolved Toggle</a>
-  <a href="#shift">🌙 Shift End</a>
-  <a href="#standards">📐 Standards</a>
-  <a href="#disclaimers">⚠️ Disclaimers</a>
-  <a href="#checklist">☑ Checklist</a>
+  <a href="#availability">Availability</a>
+  <a href="#status">Chat Status</a>
+  <a href="#timings">Response Times</a>
+  <a href="#opening">Chat Opening</a>
+  <a href="#silence">Silence Handling</a>
+  <a href="#active">Active Handling</a>
+  <a href="#call">Call Requests</a>
+  <a href="#junk">Junk Chats</a>
+  <a href="#closing">Closing Chats</a>
+  <a href="#resolved">Resolved Toggle</a>
+  <a href="#shift">Shift End</a>
+  <a href="#standards">Standards</a>
+  <a href="#disclaimers">Disclaimers</a>
+  <a href="#checklist">Checklist</a>
 </nav>
 
 <main>
 
   <div class="callout" style="margin-top:32px;">
-    <div class="callout-icon">💡</div>
+    <svg class="callout-icon" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,12.5A1.5,1.5 0 0,0 10.5,14A1.5,1.5 0 0,0 12,15.5A1.5,1.5 0 0,0 13.5,14A1.5,1.5 0 0,0 12,12.5M12,6.5A1.5,1.5 0 0,0 10.5,8V11A1.5,1.5 0 0,0 12,12.5A1.5,1.5 0 0,0 13.5,11V8A1.5,1.5 0 0,0 12,6.5Z"/></svg>
     <div class="callout-body">
-      <h3>Your Role as a Chat Executive</h3>
-      <p>You are not just answering queries you are educating users and building trust. You represent the brand voice of Wint Wealth. Every message you send must be timely, technically accurate, personalised, educational (not advisory), grammatically correct, and process compliant.</p>
+      <h3>Your Role as an Investor Relations Associate</h3>
+      <p>You are not just answering queries; you are educating investors and building long-term trust. You represent the brand voice of Wint Wealth. Every message you send must be prompt, technically accurate, highly personalised, educational (not advisory), grammatically sound, and fully compliant with our internal processes.</p>
     </div>
   </div>
-
-
 
   <!-- EXECUTIVE AVAILABILITY -->
   <div id="availability" class="step-block">
     <div class="step-hdr">
-      <div class="step-badge icon">🟢</div>
+      <div class="step-badge icon">
+        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/></svg>
+      </div>
       <h2>Agent Availability Status</h2>
-      <!-- <span class="step-sub">Keep This Updated at All Times</span> -->
     </div>
     <div class="step-body">
       <div class="ui-ref-row">
         <div class="ui-ref-card">
           <div class="ui-ref-label">🖥 Robylon UI — Agent Status Dropdown</div>
-          <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAHeAuIDASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAUBAgMGCAQH/8QAUhAAAQMCAgMLBwoEAwYFBQEAAAECAwQFBhEHEiETFBUxUVJVkpOU0QgWF0Fys9IiMzY3U1RhcXSxIzI1c0KBkSQmNGKhwSU4Q3aCCTl1srSD/8QAGwEBAQADAQEBAAAAAAAAAAAAAAEEBQYCBwP/xAAsEQEAAgIBAwEGBgMAAAAAAAAAARECBAMFITESBhNBcbHwFTJRgZGhImHh/9oADAMBAAIRAxEAPwCwopUtUAFUKWqAVSirlxqSeFrLVYhvtNaaRUa+Z3ynqmaManG5fyOjMOaNMK2qjZG+2Q1c2Xy5ahiSOcv+exP8gOX9ZOUprJyp/qdbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG291j8AOSdZOVBrJyodbeZmFugbb3WPwHmZhboG2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ms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms05UGacqEKBQms0BDxvdG5HMXJSXjdrxtdypmQeHEP8ARqr8GZ/9SLgeSmIf6NVf2yDpnbEAloHcR7I12EfTrxHuiXYgHoaXoY2l6AcqaYPrJvPtx+6Yas02nTB9ZN59uP3TDVmgXoXFqFwAAAVUopVSigWqY3GRTG4D6V5OWt561moiK7eK5Z8XzjToTOr+zh66+Bz75OH03q/0K+8adEqB5Huq8vm4OuvgeaZ1Xkv8OHrr4Eg88s67AImodVfZw9dfAiq51Qsb0eyJG6q55OXPImqjiUibh81J7KlgbnB8yz2U/Yx1/wDwrvzT9zJB8yz2U/Yx1/8AwrvzT9yCNAB6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlqf5iP2UIklqf5iP2UJI8eIP6NVf2zWaZ1V9nD1l8DZsQ/0aq/tmu0oHvp3VWz+HD118D3xOq8vm4euvgeWmXiJCHiQguY6ry+bg66+Bei1efzcPXXwMjS9OMDlTTB9ZN49uL3LDVmm06YPrJvPtx+6Yas0C9C4tQuAAACqlFKqUUC1TG4yKY3AfTPJw+m9X+hX3jTolTnbycPpvV/oV9406JUDG88lQet55KgCPqOIiLh81J7K/sS9QRFw+ak9lf2EDdIPmWeyn7GOv/4V35p+5kg+ZZ7KfsY6/wD4V35p+4EaAD0AAAHzTSbpbtmEq19qoaZLndGfOs19WOBdmxy8auy9ScXrN7xLcOCcO3K6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" alt="Agent Status Screenshot" class="ui-ref-img" />
-          <p class="ui-ref-caption">Select <strong>Online</strong> to start receiving chats. Select <strong>Unavailable</strong> when logging off. These are the only two options on Robylon.</p>
+          
+          <!-- Native UI Mockup Replacement for Screenshot -->
+          <div class="mock-ui-container">
+            <div class="mock-dropdown-box">
+              <span style="display:flex; align-items:center; gap:8px;"><span class="status-dot dot-available"></span> <strong>Online</strong></span>
+              <span style="color:var(--text-light); font-size:10px;">▼</span>
+            </div>
+            <div class="mock-dropdown-list">
+              <div class="mock-dropdown-item active"><span class="status-dot dot-available"></span> Online</div>
+              <div class="mock-dropdown-item"><span class="status-dot dot-unavailable"></span> Unavailable</div>
+            </div>
+          </div>
+
+          <p class="ui-ref-caption">Select <strong>Online</strong> to start receiving chats. Select <strong>Unavailable</strong> to temporarily stop assignment. These are the only two options on Robylon.</p>
         </div>
       </div>
       <p class="s-intro">Your availability status tells the system whether you are ready to receive new chats. On Robylon, there are only two availability states.</p>
@@ -297,7 +338,7 @@
             <div class="avail-name">Online</div>
           </div>
           <div class="avail-sub">Will Receive Chats</div>
-          <div class="avail-desc">Set this when you are active, logged in, and ready to handle chats. When you are Online, new chats will be assigned to you.</div>
+          <div class="avail-desc">Set this when you are active, logged in, and ready to handle chats. When you are Online, new chats will be assigned to you automatically.</div>
         </div>
         <div class="avail-item">
           <div class="avail-header">
@@ -305,38 +346,41 @@
             <div class="avail-name">Unavailable</div>
           </div>
           <div class="avail-sub">Will Not Receive Chats</div>
-          <div class="avail-desc">Set this once you recieved chats.</div>
+          <div class="avail-desc">Set this once you have received your quota of chats, or when logging off.</div>
         </div>
       </div>
-      <!--<div class="tip-box" style="margin-top:14px;">-->
-      <!--  <div class="box-lbl">💡 Key Change from Previous Platform</div>-->
-      <!--  On Robylon, there is <strong>no separate "Away" status.</strong> Once chats are assigned to you, you stay on <strong>Online</strong> while handling them. Only switch to <strong>Unavailable</strong> when you are logging off completely.-->
-      <!--</div>-->
     </div>
   </div>
-
 
   <!-- CHAT STATUS -->
   <div id="status" class="step-block">
     <div class="step-hdr">
-      <div class="step-badge icon">🔖</div>
-      <h2>Chat Status What Each Status Means</h2>
+      <div class="step-badge icon">
+        <svg viewBox="0 0 24 24"><path d="M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5A2,2 0 0,0 17,3M17,18L12,15.82L7,18V5H17V18Z"/></svg>
+      </div>
+      <h2>Chat Status Operations</h2>
       <span class="step-sub">Robylon Platform</span>
     </div>
     <div class="step-body">
-      <div class="platform-badge"> Robylon 3 Chat Statuses</div>
-      <!--<div class="ui-ref-row">-->
-      <!--  <div class="ui-ref-card">-->
-      <!--    <div class="ui-ref-label">🖥 Robylon UI — Chat Status Dropdown</div>-->
-      <!--    <img src="data:image/png;base64,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" alt="Chat Status Screenshot" class="ui-ref-img" style="max-width:260px;" />-->
-      <!--    <p class="ui-ref-caption">The status dropdown is at the top of every chat. Tap the current status to change it to <strong>Open</strong>, <strong>Waiting On Agent</strong>, or <strong>Closed</strong>.</p>-->
-      <!--  </div>-->
-      <!--</div>-->
+      <div class="platform-badge">Robylon 3 Chat Statuses</div>
       <div class="ui-ref-row">
         <div class="ui-ref-card">
           <div class="ui-ref-label">🖥 Robylon UI — Chat Status Dropdown</div>
-          <img src="data:image/png;base64,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" alt="Chat Status Screenshot" class="ui-ref-img" style="max-width:280px;" />
-          <p class="ui-ref-caption">The status dropdown is available at the top of every chat. Tap the current status to change it to <strong>Open</strong>, <strong>Waiting On Agent</strong>, or <strong>Closed</strong>.</p>
+          
+          <!-- Native UI Mockup Replacement for Screenshot -->
+          <div class="mock-ui-container">
+            <div class="mock-dropdown-box" style="max-width: 200px;">
+              <span style="display:flex; align-items:center; gap:8px;"><span class="status-dot dot-open"></span> <strong>Open</strong></span>
+              <span style="color:var(--text-light); font-size:10px;">▼</span>
+            </div>
+            <div class="mock-dropdown-list" style="max-width: 200px;">
+              <div class="mock-dropdown-item active"><span class="status-dot dot-open"></span> Open</div>
+              <div class="mock-dropdown-item"><span class="status-dot dot-waiting"></span> Waiting On Agent</div>
+              <div class="mock-dropdown-item"><span class="status-dot dot-closed"></span> Closed</div>
+            </div>
+          </div>
+
+          <p class="ui-ref-caption">The status dropdown is available at the top of every chat window. Click on the current status to update it to <strong>Open</strong>, <strong>Waiting On Agent</strong>, or <strong>Closed</strong>.</p>
         </div>
       </div>
       <p class="s-intro">On Robylon, every chat has one of three statuses. By default, all newly assigned chats will have an <strong>Open</strong> status. You must update the status based on the situation as the conversation progresses.</p>
@@ -356,14 +400,14 @@
               <div class="status-dot dot-waiting"></div>
               <div class="status-pill-body">
                 <strong>Waiting on Agent</strong>
-                <span>Use this whenever something is pending whether it is on <strong>our side</strong> (researching, checking with team, buying time) OR on the <strong>customer's side</strong> (waiting for them to share a screenshot, document, or reply). This is the single "on hold" status for both scenarios.</span>
+                <span>Use this whenever something is pending, whether it is on <strong>our side</strong> (researching, checking with internal teams, buying time) OR on the <strong>customer's side</strong> (waiting for them to share a screenshot, document, or reply). This is the single "on hold" status for both scenarios.</span>
               </div>
             </div>
             <div class="status-pill">
               <div class="status-dot dot-closed"></div>
               <div class="status-pill-body">
                 <strong>Closed</strong>
-                <span>Use when: (a) the issue is fully resolved and the customer is satisfied, OR (b) closing after no response following your follow-up, OR (c) closing a junk chat. <strong>All chats end as Closed.</strong></span>
+                <span>Use when: (a) the issue is fully resolved and the customer has confirmed it, (b) closing after no response following your formal follow-up, or (c) closing a junk chat. <strong>All chats must end as Closed.</strong></span>
               </div>
             </div>
           </div>
@@ -371,25 +415,18 @@
         <div>
           <div class="status-group-title">💬 Quick Guide — When to Set Each Status</div>
           <div class="status-items">
-            <!--<div class="status-pill" style="background:var(--green-light);border-color:#b6e8c6;">-->
-            <!--  <div class="status-dot dot-open"></div>-->
-            <!--  <div class="status-pill-body">-->
-            <!--    <strong>Set Open when…</strong>-->
-            <!--    <span>The chat is assigned to you and you are actively handling it. This is the default — no change needed when you first pick up a chat.</span>-->
-            <!--  </div>-->
-            <!--</div>-->
             <div class="status-pill" style="background:var(--amber-light);border-color:var(--amber-border);">
               <div class="status-dot dot-waiting"></div>
               <div class="status-pill-body">
                 <strong>Set Waiting on Agent when…</strong>
-                <span>You are checking details or waiting for a response from our team OR you have asked the customer to share something (screenshot, transaction ID, bank statement) and are waiting for their reply. Also set this before logging off for the day.</span>
+                <span>You are verifying details or waiting for a response from our team, OR you have asked the customer to share something (screenshot, transaction ID, bank statement) and are awaiting their response. Also set this right before logging off for the day.</span>
               </div>
             </div>
             <div class="status-pill" style="background:#f1f5f9;border-color:var(--line);">
               <div class="status-dot dot-closed"></div>
               <div class="status-pill-body">
                 <strong>Set Closed when…</strong>
-                <span>Issue is solved and confirmed by customer, OR no response after follow-up (add No Response tag), OR junk chat (add Junk tag). All closures are set to Closed.</span>
+                <span>The issue is solved and confirmed by the customer, OR there is no response after a follow-up (apply the 'No Response' tag), OR it is a junk chat (apply the 'Junk' tag). All closures are set to Closed.</span>
               </div>
             </div>
           </div>
@@ -398,25 +435,22 @@
 
       <div class="warn-box">
         <div class="box-lbl">⚠ Important</div>
-        Do not leave chats on <strong>Open</strong> unnecessarily when something is pending. Update to <strong>Waiting on Agent</strong> as soon as there is a hold whether it is on your side or the customer's side.
+        Do not leave chats on <strong>Open</strong> unnecessarily when an item is pending. Update to <strong>Waiting on Agent</strong> as soon as there is a hold, whether it is on your side or the customer's side.
       </div>
-
-      <!--<div class="tip-box" style="margin-top:12px;">-->
-      <!--  <div class="box-lbl">💡 Key Change from Previous Platform</div>-->
-      <!--  On Robylon, there is <strong>no separate "Awaiting Response" or "Pending" status.</strong> Both scenarios — waiting on our team AND waiting on the customer — are handled by the single <strong>Waiting on Agent</strong> status. Use it for both situations.-->
-      <!--</div>-->
     </div>
   </div>
 
   <!-- RESPONSE TIMES -->
   <div id="timings" class="step-block">
     <div class="step-hdr">
-      <div class="step-badge icon">⏱</div>
+      <div class="step-badge icon">
+        <svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+      </div>
       <h2>Response Time Guidelines</h2>
       <span class="step-sub">Mandatory Timelines</span>
     </div>
     <div class="step-body">
-      <p class="s-intro">Delays beyond these timelines are considered a process deviation. Please ensure every response falls within these limits.</p>
+      <p class="s-intro">Delays beyond these timelines are considered a process deviation. Please ensure every response falls within these strict limits.</p>
       <div class="time-banner">
         <div class="time-item"><div class="time-val">20–30</div><div class="time-label">mins<br/>First greeting response</div></div>
         <div class="time-divider"></div>
@@ -433,34 +467,34 @@
 
   <!-- CHAT OPENING -->
   <div id="opening" class="step-block">
-    <div class="step-hdr"><div class="step-badge">1</div><h2>Chat Opening First Thing to Check</h2></div>
+    <div class="step-hdr"><div class="step-badge">1</div><h2>Chat Opening Protocols</h2></div>
     <div class="step-body">
-      <p class="s-intro">As soon as a chat is assigned, check whether the customer has already shared a message or not.</p>
+      <p class="s-intro">As soon as a chat is assigned, verify whether the customer has already shared a specific query or just a generic greeting.</p>
       <div class="scenario-grid">
         <div class="s-card amber">
           <div class="s-tag amber">⏳ Scenario A</div>
-          <h3>No Query yet just "Hi", "Hello", or blank</h3>
+          <h3>No query yet, just "Hi", "Hello", or blank text</h3>
           <ul class="a-list">
-            <li><span class="a-dot b">1</span><span>Send a warm greeting within 20–30 minutes.</span></li>
-            <li><span class="a-dot b">2</span><span>Wait for the customer to share their query.</span></li>
-            <li><span class="a-dot b">3</span><span>If no reply, follow the Silence Handling steps.</span></li>
+            <li><span class="a-dot b">1</span><span>Send a warm, personalized greeting within 20–30 minutes.</span></li>
+            <li><span class="a-dot b">2</span><span>Wait for the customer to share their query details.</span></li>
+            <li><span class="a-dot b">3</span><span>If no reply comes in, follow the Silence Handling steps.</span></li>
           </ul>
-          <div class="sample"><div class="sample-lbl">Sample Greeting</div><p>Hi! I am Manorathi. Hope you are doing well! May I know your query, please?</p></div>
+          <div class="sample"><div class="sample-lbl">Sample Greeting</div><p>Hi! I am Manorathi from Wint Wealth. Hope you are doing well. How can I help you today?</p></div>
         </div>
         <div class="s-card green">
           <div class="s-tag green">✅ Scenario B</div>
-          <h3>Customer has already shared a query</h3>
+          <h3>Customer has already shared a specific query</h3>
           <ul class="a-list">
-            <li><span class="a-dot g">1</span><span>Send your greeting first as a separate message.</span></li>
-            <li><span class="a-dot g">2</span><span>Then follow up with acknowledgement or answer in a second message.</span></li>
-            <li><span class="a-dot g">3</span><span>Do NOT ignore the query. Proceed to Step 3 Active Handling.</span></li>
+            <li><span class="a-dot g">1</span><span>Send your formal greeting first as a separate, clean message.</span></li>
+            <li><span class="a-dot g">2</span><span>Then, follow up with an acknowledgement or answer in a second message.</span></li>
+            <li><span class="a-dot g">3</span><span>Do not ignore the query. Proceed immediately to Step 3 (Active Handling).</span></li>
           </ul>
-          <div class="sample"><div class="sample-lbl">Sample Greeting then Acknowledgement</div><p>Hi! I am Manorathi. Hope you are doing well!</p><p style="margin-top:8px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1);">I have received your query regarding [topic]. Please allow me a moment to check this for you.</p></div>
+          <div class="sample"><div class="sample-lbl">Sample Greeting then Acknowledgement</div><p>Hi! I am Manorathi from Wint Wealth. Hope you are doing well.</p><p style="margin-top:8px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1);">I have received your query regarding [topic]. Kindly allow me a few moments to check the details for you.</p></div>
         </div>
       </div>
       <div class="warn-box" style="margin-top:16px;">
         <div class="box-lbl">⚠ Important</div>
-        Always send your greeting as a separate message first. Then send the acknowledgement or answer as a second message. Do not combine both into one message even if you already know the answer.
+        Always send your greeting as a separate message first. Then send the acknowledgement or answer as a second message. Do not combine both into one massive block of text, even if you already know the answer.
     </div>
     </div>
   </div>
@@ -469,37 +503,45 @@
   <div id="silence" class="step-block">
     <div class="step-hdr"><div class="step-badge">2</div><h2>Handling Customer Silence (No Response)</h2></div>
     <div class="step-body">
-      <p class="s-intro">This applies when the customer does not reply after your first greeting, and when they go silent mid-chat. Follow the same steps in both cases.</p>
+      <p class="s-intro">This applies when the customer does not reply after your first greeting, as well as when they go silent mid-chat. Follow the exact same sequence in both cases.</p>
       <div class="flow">
         <div class="flow-step">
-          <div class="f-dot amber">⏱</div>
+          <div class="f-dot amber">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+          </div>
           <div class="flow-content">
             <strong>Wait <span class="timer">20–30 mins</span> after your last message</strong>
-            <span>Do not rush. Give the customer enough time to come back and respond.</span>
+            <span>Do not rush the user. Give the customer enough time to read your text and respond.</span>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot green">💬</div>
+          <div class="f-dot green">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M20,16H5.17L4,17.17V4H20V16Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Send a personalised follow-up message</strong>
-            <span>Always reference the customer's topic. Do not send a generic copy-paste message.</span>
-            <div class="sample"><div class="sample-lbl">Sample Follow-Up (initial silence)</div><p>Sir/Madam, are we still connected? The chat is still open with me. Please let me know your query whenever you are ready.</p></div>
-            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Sample Follow-Up (mid-chat silence)</div><p>I hope the above message answered your query regarding [topic]. Please let me know if you have any further questions I will be happy to assist you.</p></div>
-            <div class="warn-box"><div class="box-lbl">⚠ Important</div>If the system has already sent an automated follow-up (after 40–45 minutes), do <strong>NOT</strong> send another manual follow-up. This is a process deviation.</div>
+            <strong>Send a personalized follow-up message</strong>
+            <span>Always reference the customer's specific topic. Do not send a completely generic template.</span>
+            <div class="sample"><div class="sample-lbl">Sample Follow-Up (initial silence)</div><p>Sir/Madam, just checking if we are still connected? Kindly let me know your query whenever you are ready, I am here to assist you.</p></div>
+            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Sample Follow-Up (mid-chat silence)</div><p>I hope the details shared above helped clarify your query regarding [topic]. Please let me know if you have any further questions; I will be happy to help.</p></div>
+            <div class="warn-box"><div class="box-lbl">⚠ Process Check</div>If the platform has already sent an automated follow-up ping (after 40–45 minutes), do <strong>NOT</strong> send an additional manual follow-up message. That would be a process deviation.</div>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot amber">⏱</div>
+          <div class="f-dot amber">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Wait another <span class="timer">30 mins</span> after the follow-up</strong>
-            <span>Allow time after the follow-up before closing.</span>
+            <strong>Wait another <span class="timer">30 mins</span> after your follow-up</strong>
+            <span>Allow sufficient time for a response before moving to closure.</span>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot red">🔴</div>
+          <div class="f-dot red">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12,2C17.52,2 22,6.48 22,12C22,17.52 17.52,22 12,22C6.48,22 2,17.52 2,12C2,6.48 6.48,2 12,2M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Still no response? Close as Closed.</strong>
-            <span>Close the chat as <strong>Closed</strong> with the Junk No Response tag.</span>
+            <strong>Still no response? Close the interaction.</strong>
+            <span>Update the chat status to <strong>Closed</strong> and add the 'Junk No Response' tag.</span>
             <div class="tags">
               <span class="status-tag closed"><span class="sd"></span>Closed</span>
               <span class="tag amber">Junk No Response</span>
@@ -512,118 +554,127 @@
 
   <!-- ACTIVE HANDLING -->
   <div id="active" class="step-block">
-    <div class="step-hdr"><div class="step-badge">3</div><h2>Active Query Handling Responding to the User</h2></div>
+    <div class="step-hdr"><div class="step-badge icon"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17H13V15H11V17M11,13H13V7H11V13Z"/></svg></div><h2>Active Query Handling Sequence</h2></div>
     <div class="step-body">
-      <p class="s-intro">Once the user shares their query, handle it carefully in the following sequence.</p>
+      <p class="s-intro">Once the user shares their question, resolve it methodically by following this exact standard sequence.</p>
       <ul class="a-list">
-        <li><span class="a-dot b">📥</span><div><strong>Read the full query carefully before replying.</strong><br/>Understand exactly what the user is asking. Do not jump to a reply without reading the full message.</div></li>
+        <li><span class="a-dot b">1</span><div><strong>Read the entire query with full attention before replying.</strong><br/>Understand exactly what the investor is looking for. Do not jump to a quick reply or assume details based on just the first few words.</div></li>
         <li>
-          <span class="a-dot a">🔍</span>
+          <span class="a-dot a">2</span>
           <div>
-            <strong>Do you already know the answer?</strong><br/>
-            If yes send your greeting first, then answer in a separate message. Ensure it is accurate and personalised.<br/>
-            If no send a personalised acknowledgement and set the chat to <strong>Waiting on Agent</strong>.
-            <div class="sample"><div class="sample-lbl">Acknowledgement — Checking Details</div><p>Sir, I have read your query regarding referral benefits. Please allow me some time to check your details and get back to you.</p></div>
-            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Acknowledgement — Checking with Team</div><p>I have received your query about repayment tracking. Please allow me some time to check with my team and respond.</p></div>
+            <strong>Do you know the exact technical answer?</strong><br/>
+            If yes: Send your greeting first, then share the complete answer in a separate message. Make sure it is accurate and properly formatted.<br/>
+            If no: Send a personalized acknowledgement right away and change the chat status to <strong>Waiting on Agent</strong>.
+            <div class="sample"><div class="sample-lbl">Acknowledgement — Verifying Details</div><p>Sir, I have gone through your query regarding the referral benefits. Kindly allow me a brief moment to verify your account details and update you.</p></div>
+            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Acknowledgement — Checking with Team</div><p>I have received your query about your bank account linking. Kindly allow me a few minutes to check this with our backend operations team and get back to you.</p></div>
             <div class="tags" style="margin-top:10px;"><span class="status-tag waiting"><span class="sd"></span>Set status: Waiting on Agent</span></div>
-            <div class="danger-box"><div class="box-lbl">🚨 Process Breach</div>Failing to set the chat to <strong>Waiting on Agent</strong> after sending an acknowledgement is a process breach.</div>
+            <div class="danger-box"><div class="box-lbl">🚨 Process Breach</div>Failing to set the chat status to <strong>Waiting on Agent</strong> after sending an acknowledgement is considered a severe process breach.</div>
           </div>
         </li>
         <li>
-          <span class="a-dot b">📎</span>
+          <span class="a-dot b">3</span>
           <div>
-            <strong>Need something from the customer?</strong><br/>
-            If your answer depends on information from the user such as a screenshot, or document ask for it and set the chat to <strong>Waiting on Agent</strong>.
-            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Sample — Requesting Information from Customer</div><p>Sir, to help you with this, could you please share a screenshot of the page you got stuck? This will help me check this for you at the earliest.</p></div>
+            <strong>Do you need additional info/inputs from the customer?</strong><br/>
+            If your evaluation depends on information from the user (such as a payment proof, screen capture, or statement), request it politely and set the chat to <strong>Waiting on Agent</strong>.
+            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Sample — Requesting Information from Customer</div><p>Sir, to help me investigate this further, could you kindly share a screenshot of the error page you are seeing? This will help me resolve this for you at the earliest.</p></div>
             <div class="tags" style="margin-top:10px;"><span class="status-tag waiting"><span class="sd"></span>Set status: Waiting on Agent</span></div>
-            <div class="tip-box"><div class="box-lbl">💡 Note</div><strong>Waiting on Agent</strong> is used for both when WE are researching and when the CUSTOMER needs to share something. It is the single hold status for all pending situations.</div>
+            <div class="tip-box"><div class="box-lbl">💡 Note</div>The <strong>Waiting on Agent</strong> status is universally used both when WE are researching details and when we are WAITING for the customer to share inputs. It serves as our single pending holder.</div>
           </div>
         </li>
-        <li><span class="a-dot g">✍️</span><div><strong>Draft your final response.</strong><br/>Use the Writer tool to draft and refine. Cover all queries, use the customer's wording, break into points, include links or screenshots, and ensure accuracy. If unsure consult SME or TL. <strong>Do not guess.</strong></div></li>
-        <li><span class="a-dot b">👀</span><div><strong>Re-read the full chat before sending.</strong><br/>Check that no question has been missed. Ensure the answer is complete and personalised.</div></li>
-        <li><span class="a-dot g">📤</span><div><strong>Send the final answer within 1 hour of acknowledgement.</strong><br/>Copy the finalised draft and send. Do not combine the final answer with a follow-up message.</div></li>
-        <li><span class="a-dot n">🔁</span><div><strong>Customer has another question?</strong><br/>Continue from the top. Keep handling until all queries are fully resolved.</div></li>
+        <li><span class="a-dot g">4</span><div><strong>Draft your final response.</strong><br/>Use the internal Writer tool to format and refine your message. Address all parts of the user's queries, mirror their vocabulary, break down numbers into points, attach accurate links/screenshots, and verify information. If you are ever unsure, consult your SME or TL. <strong>Never guess.</strong></div></li>
+        <li><span class="a-dot b">5</span><div><strong>Review the entire chat text before hitting send.</strong><br/>Verify that no ancillary question has been left unaddressed. Ensure your tone is helpful, complete, and respectful.</div></li>
+        <li><span class="a-dot g">6</span><div><strong>Deliver the final solution within 1 hour of acknowledgement.</strong><br/>Copy your polished text from the tool and send it out. Do not mix your final resolution message with follow-up phrasing.</div></li>
+        <li><span class="a-dot n">7</span><div><strong>Customer has cross-questions?</strong><br/>Loop back to the top of this active sequence. Continue addressing inputs until all issues are fully resolved.</div></li>
       </ul>
       <div class="divider"></div>
-      <p style="font-size:13px;font-weight:600;margin-bottom:8px;">Personalisation Quick Check Before Every Message Ask Yourself:</p>
+      <p style="font-size:13px;font-weight:600;margin-bottom:8px;">Quality Check Before Every Single Message Ask Yourself:</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:var(--off-white);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text-mid);">✅ Have I answered everything?</div>
-        <div style="background:var(--off-white);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text-mid);">✅ Is this personalised?</div>
-        <div style="background:var(--off-white);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text-mid);">✅ Is this technically correct?</div>
+        <div style="background:#f9f9f9;border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text-mid);">A addressed everything they asked?</div>
+        <div style="background:#f9f9f9;border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text-mid);">✅ Is this response customized and personalized?</div>
+        <div style="background:#f9f9f9;border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text-mid);">✅ Is the detail technically accurate according to platform guidelines?</div>
       </div>
     </div>
   </div>
 
   <!-- CALL REQUESTS -->
   <div id="call" class="step-block">
-    <div class="step-hdr"><div class="step-badge">4</div><h2>Call Request Handling</h2></div>
+    <div class="step-hdr"><div class="step-badge">4</div><h2>Outbound Call Request Management</h2></div>
     <div class="step-body">
-      <p class="s-intro">When a customer asks for a call, follow this structured process. Refer to the full Call SOP for detailed call guidelines.<a class="sample-lbl" href="https://cxsop.github.io/call/" target="_blank"> View Call SOP →</a></p>
+      <p class="s-intro">When an investor explicitly requests a callback or if an ongoing complex query requires a call, follow this standard process. Always keep the Call SOP open for phone guidelines.<a class="sample-lbl" href="https://cxsop.github.io/call/" target="_blank"> View Call SOP →</a></p>
       <div class="flow">
         <div class="flow-step">
-          <div class="f-dot green">💬</div>
+          <div class="f-dot green">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M20,16H5.17L4,17.17V4H20V16Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Greet and ask for preferred call time</strong>
-            <div class="sample"><div class="sample-lbl">Sample Message</div><p>Sir, please let me know your preferred time for the call. I will be happy to connect with you.</p></div>
+            <strong>Acknowledge and ask for their preferred time to connect</strong>
+            <div class="sample"><div class="sample-lbl">Sample Message</div><p>Sir, kindly let me know your preferred time to connect over a call. I will be glad to call you and answer your queries directly.</p></div>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot amber">📞</div>
+          <div class="f-dot amber">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>If no response — call within 30 minutes</strong>
-            <span>Do not wait indefinitely. Attempt the call proactively.</span>
+            <strong>If no reply comes within 30 minutes — initiate call proactively</strong>
+            <span>Do not wait indefinitely for a confirmation text. Attempt to call them directly.</span>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot red">📵</div>
+          <div class="f-dot red">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M19.74,13.26L17.12,12.56L15.47,14.21C12.8,12.85 10.59,10.63 9.24,7.97L10.89,6.32L10.19,3.7C10.07,3.28 9.69,3 9.25,3H4.5C3.95,3 3.5,3.45 3.5,4A16.5,16.5 0 0,0 20,20.5C20.55,20.5 21,20.05 21,19.5V14.75C21,14.31 20.72,13.93 20.3,13.81L19.74,13.26M19.5,18.78C16.92,18.42 14.47,17.39 12.31,15.77L14.77,13.31L19.5,14.58V18.78M5.22,4.5H9.42L10.69,9.23L8.23,11.69C6.61,9.53 5.58,7.08 5.22,4.5Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Call not answered? Send a message and wait.</strong>
-            <div class="sample"><div class="sample-lbl">Call Not Answered — Sample Message</div><p>Sir, as per your request I called you. Unfortunately, the call was not answered. Please let me know the next preferred time to call you again.</p></div>
-            <span>Wait 30 minutes. If still no response → close as Closed.</span>
+            <strong>If the call goes unanswered, send a chat message immediately and place on hold</strong>
+            <div class="sample"><div class="sample-lbl">Call Unanswered — Sample Message</div><p>Sir, as requested, I tried calling you just now to discuss your query. Unfortunately, the call went unanswered. Kindly let me know a convenient time for us to connect again.</p></div>
+            <span>Wait for 30 minutes. If no update or callback request is received, close the chat as <strong>Closed</strong>.</span>
             <div class="tags" style="margin-top:8px;"><span class="status-tag closed"><span class="sd"></span>Closed</span><span class="tag amber">Junk – No Response</span></div>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot green">✅</div>
+          <div class="f-dot green">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Call answered and issue resolved</strong>
-            <span>Send a summary message on chat and close as Closed.</span>
+            <strong>If the call is answered and query is resolved</strong>
+            <span>Send a crisp resolution summary over the chat and move the status to <strong>Closed</strong>.</span>
             <div class="tags" style="margin-top:8px;"><span class="status-tag closed"><span class="sd"></span>Closed</span><span class="tag blue">Calls_Directly</span><span class="tag dark">Asset_General_Enquiry</span></div>
-            <div class="sample" style="margin-top:10px;"><div class="sample-lbl">Post-Call Summary Message</div><p>I hope the call was helpful. Please connect with us if you have any further queries. Have a nice day!</p></div>
+            <div class="sample" style="margin-top:10px;"><div class="sample-lbl">Post-Call Summary Message</div><p>I glad we could connect over a call and resolve your query. Please feel free to reach out here if you have any other questions. Have a wonderful day ahead!</p></div>
           </div>
         </div>
         <div class="flow-step">
-          <div class="f-dot amber">🔄</div>
+          <div class="f-dot amber">
+            <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+          </div>
           <div class="flow-content">
-            <strong>Did not know the answer during the call?</strong>
-            <span>Politely inform the customer on the call. Then send a message on chat, set it to <strong>Waiting on Agent</strong>, and respond within 1 hour.</span>
-            <div class="sample"><div class="sample-lbl">During Call — What to Say</div><p>Sir, I will check this with my team and get back to you shortly.</p></div>
-            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Post-Call — Chat Message</div><p>Sir, I have shared your query with my team. Please allow me some time to get back to you with the resolution.</p></div>
+            <strong>If you did not have the full answer during the live call</strong>
+            <span>Inform the customer politely during the conversation. Post-call, drop a text confirmation on the chat thread, mark the chat as <strong>Waiting on Agent</strong>, and deliver the resolution within 1 hour.</span>
+            <div class="sample"><div class="sample-lbl">During Call — What to Say</div><p>Sir, I will check the background status of this ledger entry with my team and get back to you with an update shortly.</p></div>
+            <div class="sample" style="margin-top:8px;"><div class="sample-lbl">Post-Call — Chat Message</div><p>Sir, as discussed on our call, I have shared your transaction query with our backend ledger team. Kindly allow me some time to get this checked and provide a resolution for you.</p></div>
             <div class="tags" style="margin-top:8px;"><span class="status-tag waiting"><span class="sd"></span>Set status: Waiting on Agent</span></div>
-            <div class="danger-box"><div class="box-lbl">🚨 Remember</div>Set chat to <strong>Waiting on Agent</strong> after this message. Respond with the final answer within 1 hour.</div>
+            <div class="danger-box"><div class="box-lbl">🚨 Process Rule</div>Ensure the chat status is updated to <strong>Waiting on Agent</strong> immediately after sending this note. The final response must go out within 1 hour.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- JUNK -->
+  <!-- JUNK CHATS -->
   <div id="junk" class="step-block">
-    <div class="step-hdr"><div class="step-badge">5</div><h2>Junk Chat Handling</h2></div>
+    <div class="step-hdr"><div class="step-badge">5</div><h2>Junk Chat Filtering Rules</h2></div>
     <div class="step-body">
-      <p class="s-intro">A chat is considered junk in any of the following situations. Handle it politely and close as Closed with the Junk tag.</p>
+      <p class="s-intro">A chat thread is officially categorized as a 'Junk Chat' in the following scenarios. Treat them politely, apply closure text, and close as Closed with the Junk tag.</p>
       <ul class="a-list">
-        <li><span class="a-dot r">🔗</span><span>Customer sends an unknown link, suspicious image, or completely irrelevant content.</span></li>
-        <li><span class="a-dot r">✓</span><span>Customer says their issue was already resolved before the conversation started.</span></li>
-        <li><span class="a-dot r">❓</span><span>Message is random and has no relation to any service we offer.</span></li>
+        <li><span class="a-dot r">🔗</span><span>The incoming payload contains only unknown external links, spam screenshots, or random text blasts.</span></li>
+        <li><span class="a-dot r">✓</span><span>The investor drops in only to mention that their issue was completely resolved before your chat opened.</span></li>
+        <li><span class="a-dot r">❓</span><span>The context is random or text is completely unrelated to Wint Wealth services or accounts.</span></li>
       </ul>
       <div class="divider"></div>
       <div class="flow">
         <div class="flow-step">
-          <!--<div class="f-dot green"></div>-->
           <div class="flow-content">
-            <strong>Send closure message and close as Closed with Junk tag</strong>
-            <div class="sample"><div class="sample-lbl">Junk Closure Message</div><p>Thank you for contacting Wint Wealth.</p></div>
+            <strong>Send a formal template closure note and update status to Closed with Junk tag</strong>
+            <div class="sample"><div class="sample-lbl">Junk Closure Template</div><p>Thank you for contacting Wint Wealth.</p></div>
             <div class="tags" style="margin-top:8px;"><span class="status-tag closed"><span class="sd"></span>Closed</span><span class="tag amber">Junk</span></div>
           </div>
         </div>
@@ -633,15 +684,15 @@
 
   <!-- CLOSING -->
   <div id="closing" class="step-block">
-    <div class="step-hdr"><div class="step-badge">6</div><h2>Chat Closing Guidelines</h2></div>
+    <div class="step-hdr"><div class="step-badge">6</div><h2>Chat Closing Protocol</h2></div>
     <div class="step-body">
-      <p class="s-intro">Never rush to close a chat. Before closing, always ask once if there is any other query, ensure all queries are answered, and re-read the full conversation.</p>
+      <p class="s-intro">Never abruptly close an interaction thread. Before triggering any closure, always double-check if all parts of the user's inquiry have been resolved, explicitly ask if they need help with anything else, and review the text history.</p>
       <div class="scenario-grid">
         <div class="s-card green">
           <div class="s-tag green">SCENARIO 1</div>
-          <h3>✅ User Confirms Resolution</h3>
-          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Customer says "Thank you", "Okay", "Resolved", or similar.</p>
-          <div class="sample"><div class="sample-lbl">Closing Message</div><p>Thank you for reaching out! I am glad to be of assistance. Please don't hesitate to connect with us if you have any other queries. Have a nice day!</p></div>
+          <h3>✅ Investor Confirms Resolution</h3>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">The customer responds with "Thank you", "Okay", "Got it", or "Issue resolved".</p>
+          <div class="sample"><div class="sample-lbl">Closing Message</div><p>Thank you for reaching out to Wint Wealth! I am happy to help. Please do not hesitate to contact us if you have any other questions. Have a wonderful day ahead!</p></div>
           <div class="tags" style="margin-top:10px;">
             <span class="status-tag closed"><span class="sd"></span>Closed</span>
             <span class="tag blue">Asset_General_Enquiry</span>
@@ -651,9 +702,9 @@
         </div>
         <div class="s-card" style="background:var(--red-light);border-color:var(--red-border);">
           <div class="s-tag" style="color:var(--red);">SCENARIO 2</div>
-          <h3>🔇 No Response After Follow-Up</h3>
-          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Customer did not reply for 30 minutes after your follow-up.</p>
-          <div class="info-box"><div class="box-lbl">ℹ Note</div>Do not second multiple follow-up's, set a proper expextation what to do next and close it accordingly.</div>
+          <h3>🔇 Customer Remains Silent Post Follow-Up</h3>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">The investor has not sent any text for 30 minutes after you delivered your manual follow-up ping.</p>
+          <div class="info-box"><div class="box-lbl">ℹ Process Guideline</div>Do not send multiple repetitive follow-up pings. Set clear next-step expectations for the investor and close the thread.</div>
           <div class="tags" style="margin-top:10px;">
             <span class="status-tag closed"><span class="sd"></span>Closed</span>
             <span class="tag amber">Junk No Response</span>
@@ -662,9 +713,9 @@
         </div>
         <div class="s-card" style="background:#fafafa;border-color:var(--line);">
           <div class="s-tag" style="color:var(--text-mid);">SCENARIO 3</div>
-          <h3>🗑 Junk Closure</h3>
-          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Random, irrelevant, or already resolved before chat started.</p>
-          <div class="sample"><div class="sample-lbl">Closure Message</div><p>Thank you for contacting Wint Wealth.</p></div>
+          <h3>🗑 Filtering Out Junk Thread</h3>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">The communication consists of random strings or was resolved beforehand.</p>
+          <div class="sample"><div class="sample-lbl">Standard Filter Note</div><p>Thank you for contacting Wint Wealth.</p></div>
           <div class="tags" style="margin-top:10px;">
             <span class="status-tag closed"><span class="sd"></span>Closed</span>
             <span class="tag amber">Junk</span>
@@ -672,23 +723,42 @@
         </div>
       </div>
       <div class="tip-box" style="margin-top:16px;">
-        <div class="box-lbl">💡 Key Update All Chats Close as Closed</div>
-        All chat closures use the <strong>Closed</strong> status. Whether the query is resolved, unanswered, or junk the chat always ends as Closed
+        <div class="box-lbl">💡 Platform Core Rule — All Chats End as Closed</div>
+        Regardless of the reason for ending the conversation (whether it is successfully solved, left unanswered, or filtered as spam), the final chat status in the system must always be updated to <strong>Closed</strong>.
       </div>
     </div>
   </div>
 
-<!-- RESOLVED TOGGLE -->
+  <!-- RESOLVED TOGGLE -->
   <div id="resolved" class="step-block">
-    <div class="step-hdr"><div class="step-badge icon">🔵</div><h2>Resolution Status — Resolved Toggle (Right Sidebar)</h2><span class="step-sub">Set Before Closing Every Chat</span></div>
+    <div class="step-hdr">
+      <div class="step-badge icon">
+        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 1,1 20,12A8,8 0 0,1 12,20M11,15L17.5,8.5L18.91,9.91L11,17.83L6.59,13.41L8,12L11,15Z"/></svg>
+      </div>
+      <h2>Resolution Status — Resolved Toggle (Right Sidebar)</h2>
+      <span class="step-sub">Mandatory Field Selection</span>
+    </div>
     <div class="step-body">
-      <p class="s-intro">In addition to setting the Chat Status to <strong>Closed</strong>, you must also update the <strong>Resolved</strong> property in the Properties panel on the <strong>right sidebar</strong> before closing any chat. This is a separate mandatory step — it is not the same as changing the chat status.</p>
+      <p class="s-intro">Along with moving the primary Chat Status header to <strong>Closed</strong>, you must update the <strong>Resolved</strong> parameter property inside the Properties panel on the <strong>right-side toolbar sidebar</strong> before saving and exiting. This is a separate metric item used for tracking operational quality.</p>
 
       <div class="ui-ref-row" style="margin-bottom:20px;">
         <div class="ui-ref-card" style="max-width:400px;">
           <div class="ui-ref-label">🖥 Robylon UI — Properties Panel (Right Sidebar)</div>
-          <img src="data:image/png;base64,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" alt="Resolved Toggle Screenshot" class="ui-ref-img" style="max-width:320px;" />
-          <p class="ui-ref-caption">The <strong>Resolved</strong> dropdown is in the Properties panel on the right sidebar. Set it to <strong>Yes</strong> or <strong>No</strong> based on whether the query was actually resolved, then click <strong>Save</strong>.</p>
+          
+          <!-- Native UI Mockup Replacement for Screenshot Panel -->
+          <div class="mock-sidebar-panel">
+            <div class="mock-sidebar-header">Ticket Properties</div>
+            <div class="mock-sidebar-field">
+              <label>Resolved *</label>
+              <div class="mock-toggle-group">
+                <div class="mock-toggle-btn yes-selected">Yes</div>
+                <div class="mock-toggle-btn">No</div>
+              </div>
+            </div>
+            <button class="mock-action-btn">Save Properties</button>
+          </div>
+
+          <p class="ui-ref-caption">The <strong>Resolved</strong> dropdown toggle is in the Properties panel on the right sidebar. Select <strong>Yes</strong> or <strong>No</strong> based on whether the query was actually resolved, then click <strong>Save Properties</strong>.</p>
         </div>
       </div>
 
@@ -751,7 +821,7 @@
 
   <!-- SHIFT END -->
   <div id="shift" class="step-block">
-    <div class="step-hdr"><div class="step-badge icon">🌙</div><h2>Shift Ending Protocol</h2></div>
+    <div class="step-hdr"><div class="step-badge icon"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/></svg></div><h2>Shift Ending Protocol</h2></div>
     <div class="step-body">
       <p class="s-intro">If your shift is about to end and there are open chats, follow these steps in exact order. Never log off without completing all steps.</p>
       <div class="shift-steps">
@@ -760,7 +830,7 @@
         <div class="shift-step"><div class="shift-num">3</div><span>Set the chat status to <strong>Waiting on Agent</strong>.</span></div>
         <div class="shift-step"><div class="shift-num">4</div><span>Change your Agent Availability to <strong>Unavailable (Offline)</strong>.</span></div>
       </div>
-      <div class="sample" style="margin-top:16px;"><div class="sample-lbl">Sample Logging-Off Message</div><p>I am logging off for the day, but your chat is still open. I will update you as soon as I receive a response from the concerned team. If you have any questions, feel free to drop them here. We will respond when we log in tomorrow at 10 AM. Thank you for your understanding. Have a good night!</p></div>
+      <div class="sample" style="margin-top:16px;"><div class="sample-lbl">Sample Logging-Off Message</div><p>I am logging off for the day, but your chat is still open with us. I will update you as soon as I receive a response from the concerned team. Feel free to leave any further questions right here; our team will check them and reply as soon as we back online tomorrow morning at 10 AM. Thank you for your understanding, and have a good evening!</p></div>
       <div class="warn-box">
         <div class="box-lbl">⚠ Order Matters</div>
         Change availability to <strong>Unavailable</strong> only <em>after</em> all log-off messages are sent and all open chats are set to <strong>Waiting on Agent</strong>. Do not go Unavailable before completing these steps.
@@ -770,7 +840,7 @@
 
   <!-- STANDARDS -->
   <div id="standards" class="step-block">
-    <div class="step-hdr"><div class="step-badge icon">📐</div><h2>Communication Standards</h2></div>
+    <div class="step-hdr"><div class="step-badge icon"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/></svg></div><h2>Communication Standards</h2></div>
     <div class="step-body">
       <p class="s-intro">These standards apply to every single message you send. There are no exceptions.</p>
       <div class="do-dont">
@@ -806,17 +876,17 @@
       <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Instead of a generic closing like this:</p>
       <div style="background:var(--red-light);border:1px solid var(--red-border);border-radius:8px;padding:11px 14px;font-size:13px;color:var(--text-mid);font-style:italic;">"I hope I was able to address all your queries with the solutions provided above."</div>
       <p style="font-size:13px;color:var(--text-mid);margin:10px 0;">Personalise it like this:</p>
-      <div class="sample"><div class="sample-lbl">Personalised Closing</div><p>"I hope I was able to address all your queries regarding the referral program and the calculations on the platform with the solutions provided above."</p></div>
+      <div class="sample"><div class="sample-lbl">Personalised Closing</div><p>"I hope I was able to clarify your doubts regarding our latest bond interest payouts and the calculation timeline on the platform. Please let me know if you need help with anything else!"</p></div>
       <div class="tip-box" style="margin-top:14px;">
         <div class="box-lbl">💡 Educational Responsibility</div>
-        Your role is to <strong>educate</strong> users not advise them. Clarify doubts, explain processes, and guide them through platform usage. Give the right amount of information do not overwhelm.
+        Your role is to <strong>educate</strong> users, not advise them. Clarify doubts, explain processes, and guide them through platform usage. Give the right amount of information do not overwhelm.
       </div>
     </div>
   </div>
 
   <!-- DISCLAIMERS -->
   <div id="disclaimers" class="step-block">
-    <div class="step-hdr"><div class="step-badge icon">⚠️</div><h2>Mandatory Disclaimers</h2></div>
+    <div class="step-hdr"><div class="step-badge icon"><svg viewBox="0 0 24 24"><path d="M12,2L1,21H23L12,2M12,6L19.53,19H4.47L12,6M11,10V14H13V10H11M11,16V18H13V16H11Z"/></svg></div><h2>Mandatory Disclaimers</h2></div>
     <div class="step-body">
       <p class="s-intro">For the following types of queries, you <strong>must</strong> include the relevant disclaimer. This is mandatory — not optional.</p>
       <div class="disc-grid">
@@ -850,7 +920,7 @@
 
   <!-- CHECKLIST -->
   <div id="checklist" class="step-block">
-    <div class="step-hdr"><div class="step-badge icon">☑</div><h2>Final Quality Checklist — Before Closing Any Chat</h2></div>
+    <div class="step-hdr"><div class="step-badge icon"><svg viewBox="0 0 24 24"><path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 1,1 11,4A1,1 0 0,1 12,3M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/></svg></div><h2>Final Quality Checklist — Before Closing Any Chat</h2></div>
     <div class="step-body">
       <p class="s-intro">Run through every point below before you close any chat. This is your final quality check.</p>
       <div class="checklist">
@@ -864,7 +934,6 @@
         <div class="check-item"><div class="check-icon"></div>Asked customer if there is any other query</div>
         <div class="check-item"><div class="check-icon"></div>Chat closed as Closed with correct tags</div>
         <div class="check-item"><div class="check-icon"></div>Resolved toggle set to Yes / No in Properties panel (right sidebar) — and Save clicked</div>
-        <div class="check-item"><div class="check-icon"></div>Resolved toggle set to Yes or No in Properties panel</div>
         <div class="check-item"><div class="check-icon"></div>Mandatory disclaimer included (if applicable)</div>
         <div class="check-item"><div class="check-icon"></div>Language is professional and grammatically correct</div>
         <div class="check-item"><div class="check-icon"></div>Response is personalised — not generic</div>
@@ -876,8 +945,8 @@
 
 
   <!-- Quick reference -->
-  <div id="resolved" class="step-block">
-    <div class="step-hdr"><div class="step-badge icon">📌</div><h2>Quick Reference — Resolution Status for All Scenarios</div>
+  <div class="step-block">
+    <div class="step-hdr"><div class="step-badge icon"><svg viewBox="0 0 24 24"><path d="M16,12A2,2 0 1,1 14,10A2,2 0 0,1 16,12M22,12A10,10 0 1,1 12,2A10,10 0 0,1 22,12M20,12A8,8 0 1,0 12,20A8,8 0 0,0 20,12Z"/></svg></div><h2>Quick Reference — Resolution Status for All Scenarios</h2></div>
       <table class="ref-table">
         <thead>
           <tr><th>Situation</th><th>Chat Status</th><th>Resolved Toggle</th><th>Tags to Apply</th></tr>
@@ -896,12 +965,13 @@
       </table>
     </div>
   </div>
+  
   <!-- FINAL NOTE -->
   <div class="callout">
-    <div class="callout-icon">🌟</div>
+    <svg class="callout-icon" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/></svg>
     <div class="callout-body">
       <h3>A Note to All Associates</h3>
-      <p>You are not just handling chats you are building trust. Be calm. Be structured. Be accurate. Be patient. Be professional. Never rush to close. Never ignore a query. Always double-check before ending the conversation. Consistency in following this SOP ensures excellent customer experience and process compliance.</p>
+      <p>Consistency in implementing this SOP directly shapes Wint Wealth's identity. Be professional, structural, and accurate. Never rush to close an active user conversation before verifying their resolution status. Let's make every interaction stellar!</p>
     </div>
   </div>
 
